@@ -1,1 +1,1 @@
-printjson(db.people.findOne({"first_name":{$exists:true}}))
+printjson(db.people.find({"nationality":"Germany","sex":"Male"}).toArray())
