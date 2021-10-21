@@ -1,31 +1,123 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
+[
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d58d"),
+    first_name: 'Brenda',
+    last_name: 'Gonzalez',
+    city: 'Glagahan'
   },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
-    }
-  ]
-}
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d590"),
+    first_name: 'Anthony',
+    last_name: 'Nichols',
+    city: 'Jepuro'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d596"),
+    first_name: 'Ernest',
+    last_name: 'Ortiz',
+    city: 'Zhongcheng'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d599"),
+    first_name: 'Gregory',
+    last_name: 'Anderson',
+    city: 'Caminaca'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5a2"),
+    first_name: 'Ralph',
+    last_name: 'Austin',
+    city: 'Povorino'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5aa"),
+    first_name: 'Paula',
+    last_name: 'Hunt',
+    city: 'Vsevolozhsk'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5ad"),
+    first_name: 'Steve',
+    last_name: 'Olson',
+    city: 'Santa Cruz'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5b3"),
+    first_name: 'Anthony',
+    last_name: 'Wood',
+    city: 'Donghe'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5b6"),
+    first_name: 'Virginia',
+    last_name: 'Chapman',
+    city: 'Huangling'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5c4"),
+    first_name: 'Eugene',
+    last_name: 'Ford',
+    city: 'Muang Long'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5c6"),
+    first_name: 'Nancy',
+    last_name: 'Fisher',
+    city: 'Leon'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5cc"),
+    first_name: 'Jacqueline',
+    last_name: 'Morgan',
+    city: 'Gränna'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5cd"),
+    first_name: 'Deborah',
+    last_name: 'Moreno',
+    city: 'Cisewu'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5d4"),
+    first_name: 'Amy',
+    last_name: 'Banks',
+    city: 'Strážná'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5da"),
+    first_name: 'Virginia',
+    last_name: 'Mills',
+    city: 'Zarzis'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5df"),
+    first_name: 'Stephanie',
+    last_name: 'Porter',
+    city: 'Agen'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5e0"),
+    first_name: 'Patrick',
+    last_name: 'Moore',
+    city: 'Nong Khai'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5e1"),
+    first_name: 'Jason',
+    last_name: 'Banks',
+    city: 'Al Fukhkhārī'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5e3"),
+    first_name: 'Russell',
+    last_name: 'Bryant',
+    city: 'Zhengdonglu'
+  },
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d5e6"),
+    first_name: 'Wanda',
+    last_name: 'Burton',
+    city: 'Liangnong'
+  }
+]
+Type "it" for more

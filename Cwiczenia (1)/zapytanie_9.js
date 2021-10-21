@@ -1,1 +1,8 @@
-printjson(db.people.findOne({"first_name":{$exists:true}}))
+db.people.updateMany(
+{
+    "first_name":"Antonio"
+},{
+    $set:{
+        "hobby":"pingpong"
+    }
+})
