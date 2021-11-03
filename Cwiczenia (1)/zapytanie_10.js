@@ -2,7 +2,7 @@ db.people.updateMany(
 {
     "job":"Editor"
 },{
-    $set:{
+    $unset:{
         "email":""
     }
 })
