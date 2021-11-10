@@ -1,31 +1,14 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
+[
+  {
+    _id: 'Male',
+    avgWeightNUM: 70.00180785329879,
+    avgHeightNUM: 167.0800817221447,
+    inGroup: 10034
   },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
-    }
-  ]
-}
+  {
+    _id: 'Female',
+    avgWeightNUM: 70.11384105960265,
+    avgHeightNUM: 167.12617499498293,
+    inGroup: 9966
+  }
+]

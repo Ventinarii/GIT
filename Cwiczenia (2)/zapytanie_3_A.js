@@ -1,1 +1,6 @@
-printjson(db.people.findOne({"first_name":{$exists:true}}))
+printjson(
+db.people.aggregate([
+    {"$group":{
+		_id:"$job"
+	}}
+]))

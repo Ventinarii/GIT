@@ -1,31 +1,23 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
-  },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
-    }
-  ]
-}
+[
+  { _id: 'Jordan', BMIavg: 0.0025603840773092998 },
+  { _id: 'Bosnia and Herzegovina', BMIavg: 0.0025418629730315735 },
+  { _id: 'Bahamas', BMIavg: 0.002499481632241478 },
+  { _id: 'Honduras', BMIavg: 0.0025480342743338033 },
+  { _id: 'Slovenia', BMIavg: 0.0025041680484394 },
+  { _id: 'China', BMIavg: 0.0025504672102069944 },
+  { _id: 'Tonga', BMIavg: 0.00238293086776095 },
+  { _id: 'Papua New Guinea', BMIavg: 0.002421326408700207 },
+  { _id: 'Tanzania', BMIavg: 0.00257815670643941 },
+  { _id: 'Slovakia', BMIavg: 0.0021338818810983464 },
+  { _id: 'American Samoa', BMIavg: 0.002239833691807659 },
+  { _id: 'Mali', BMIavg: 0.0024919410302759923 },
+  { _id: 'Ethiopia', BMIavg: 0.0025473965952790036 },
+  { _id: 'Mexico', BMIavg: 0.0025384445588551427 },
+  { _id: 'Botswana', BMIavg: 0.0024080448426345266 },
+  { _id: 'Tuvalu', BMIavg: 0.002260418435695907 },
+  { _id: 'Indonesia', BMIavg: 0.0025386897562233706 },
+  { _id: 'Russia', BMIavg: 0.002527150600335293 },
+  { _id: 'Hungary', BMIavg: 0.0026314073634053805 },
+  { _id: 'Swaziland', BMIavg: 0.0020902625563889617 }
+]
+Type "it" for more

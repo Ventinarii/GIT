@@ -1,31 +1,23 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
-  },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
-    }
-  ]
-}
+[
+  { _id: 'BBD', balanceNUM: 53441 },
+  { _id: 'LAK', balanceNUM: 172610.1 },
+  { _id: 'LKR', balanceNUM: 450222.77999999997 },
+  { _id: 'BYR', balanceNUM: 1386107.7 },
+  { _id: 'ALL', balanceNUM: 1311733.26 },
+  { _id: 'XAF', balanceNUM: 1508495.14 },
+  { _id: 'GBP', balanceNUM: 487025.72 },
+  { _id: 'KRW', balanceNUM: 893477.18 },
+  { _id: 'GTQ', balanceNUM: 1195516.18 },
+  { _id: 'RWF', balanceNUM: 86599.92 },
+  { _id: 'AOA', balanceNUM: 135165.6 },
+  { _id: 'STD', balanceNUM: 9708.72 },
+  { _id: 'FJD', balanceNUM: 18642.86 },
+  { _id: 'CAD', balanceNUM: 3996316.64 },
+  { _id: 'RON', balanceNUM: 23115.2 },
+  { _id: 'MWK', balanceNUM: 176213.66 },
+  { _id: 'ERN', balanceNUM: 43196.94 },
+  { _id: 'BIF', balanceNUM: 91564.66 },
+  { _id: 'VEF', balanceNUM: 1276612.14 },
+  { _id: 'SEK', balanceNUM: 7477159.14 }
+]
+Type "it" for more

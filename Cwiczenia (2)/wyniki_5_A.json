@@ -1,31 +1,23 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
-  },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
-    }
-  ]
-}
+[
+  { _id: 'MKD', balanceSUM: 15666.66, balanceAVG: 3916.665 },
+  { _id: 'BYR', balanceSUM: 27918.5, balanceAVG: 4653.083333333333 },
+  { _id: 'LKR', balanceSUM: 20484.74, balanceAVG: 5121.185 },
+  { _id: 'KYD', balanceSUM: 7521.78, balanceAVG: 3760.89 },
+  { _id: 'PKR', balanceSUM: 69685.06, balanceAVG: 4977.504285714285 },
+  { _id: 'MNT', balanceSUM: 53776.54, balanceAVG: 5377.654 },
+  { _id: 'RWF', balanceSUM: 20524.58, balanceAVG: 5131.145 },
+  { _id: 'ALL', balanceSUM: 37321.7, balanceAVG: 4665.2125 },
+  { _id: 'XAF', balanceSUM: 48779.7, balanceAVG: 4877.969999999999 },
+  { _id: 'GBP', balanceSUM: 12298.38, balanceAVG: 6149.19 },
+  { _id: 'KRW', balanceSUM: 34973.04, balanceAVG: 5828.84 },
+  { _id: 'GTQ', balanceSUM: 22393.5, balanceAVG: 5598.375 },
+  { _id: 'THB', balanceSUM: 132919.3, balanceAVG: 4747.117857142856 },
+  { _id: 'CNY', balanceSUM: 1811510.22, balanceAVG: 5060.084413407822 },
+  { _id: 'MWK', balanceSUM: 7148.84, balanceAVG: 3574.42 },
+  { _id: 'CAD', balanceSUM: 174168.94, balanceAVG: 5122.615882352941 },
+  { _id: 'PHP', balanceSUM: 422361.54, balanceAVG: 4911.180697674418 },
+  { _id: 'SEK', balanceSUM: 249637.6, balanceAVG: 5200.783333333334 },
+  { _id: 'VEF', balanceSUM: 32424.76, balanceAVG: 4053.095 },
+  { _id: 'NIO', balanceSUM: 19942.56, balanceAVG: 4985.64 }
+]
+Type "it" for more

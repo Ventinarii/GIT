@@ -1,31 +1,516 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
+DeprecationWarning: Collection.mapReduce() is deprecated. Use an aggregation instead.
+See https://docs.mongodb.com/manual/core/map-reduce for details.
+[
+  {
+    _id: 'GTQ',
+    value: { balanceSUM: 22393.5, balanceAVG: 5598.375, inGroup: 4 }
   },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
+  {
+    _id: 'TTD',
+    value: { balanceSUM: 10006.66, balanceAVG: 5003.33, inGroup: 2 }
+  },
+  {
+    _id: 'XOF',
+    value: { balanceSUM: 90157.24, balanceAVG: 5634.8275, inGroup: 16 }
+  },
+  {
+    _id: 'ZAR',
+    value: {
+      balanceSUM: 52450.06,
+      balanceAVG: 4370.838333333333,
+      inGroup: 12
     }
-  ]
-}
+  },
+  {
+    _id: 'DKK',
+    value: { balanceSUM: 9221.22, balanceAVG: 4610.61, inGroup: 2 }
+  },
+  {
+    _id: 'CUP',
+    value: {
+      balanceSUM: 71517.68000000001,
+      balanceAVG: 5108.405714285715,
+      inGroup: 14
+    }
+  },
+  {
+    _id: 'UYU',
+    value: { balanceSUM: 11431.74, balanceAVG: 5715.87, inGroup: 2 }
+  },
+  {
+    _id: 'MKD',
+    value: {
+      balanceSUM: 15666.660000000002,
+      balanceAVG: 3916.6650000000004,
+      inGroup: 4
+    }
+  },
+  {
+    _id: 'BAM',
+    value: { balanceSUM: 11010.38, balanceAVG: 5505.19, inGroup: 2 }
+  },
+  {
+    _id: 'JOD',
+    value: { balanceSUM: 9888.12, balanceAVG: 4944.06, inGroup: 2 }
+  },
+  {
+    _id: 'HNL',
+    value: { balanceSUM: 43925.22, balanceAVG: 5490.6525, inGroup: 8 }
+  },
+  {
+    _id: 'KMF',
+    value: { balanceSUM: 11817.84, balanceAVG: 5908.92, inGroup: 2 }
+  },
+  {
+    _id: 'XPF',
+    value: { balanceSUM: 9518.14, balanceAVG: 4759.07, inGroup: 2 }
+  },
+  {
+    _id: 'RUB',
+    value: {
+      balanceSUM: 447667.11999999994,
+      balanceAVG: 4762.416170212765,
+      inGroup: 94
+    }
+  },
+  {
+    _id: 'MXN',
+    value: {
+      balanceSUM: 163691.12000000002,
+      balanceAVG: 5115.347500000001,
+      inGroup: 32
+    }
+  },
+  {
+    _id: 'VUV',
+    value: { balanceSUM: 12836.54, balanceAVG: 6418.27, inGroup: 2 }
+  },
+  {
+    _id: 'TJS',
+    value: {
+      balanceSUM: 24312.52,
+      balanceAVG: 4052.0866666666666,
+      inGroup: 6
+    }
+  },
+  {
+    _id: 'DOP',
+    value: {
+      balanceSUM: 61982.40000000001,
+      balanceAVG: 5165.200000000001,
+      inGroup: 12
+    }
+  },
+  {
+    _id: 'ILS',
+    value: { balanceSUM: 39656.68, balanceAVG: 4957.085, inGroup: 8 }
+  },
+  {
+    _id: 'KES',
+    value: { balanceSUM: 8798.2, balanceAVG: 4399.1, inGroup: 2 }
+  },
+  {
+    _id: 'TZS',
+    value: { balanceSUM: 38535.36, balanceAVG: 4816.92, inGroup: 8 }
+  },
+  {
+    _id: 'PLN',
+    value: {
+      balanceSUM: 411611.5999999999,
+      balanceAVG: 5145.144999999999,
+      inGroup: 80
+    }
+  },
+  {
+    _id: 'MAD',
+    value: {
+      balanceSUM: 59484.759999999995,
+      balanceAVG: 4957.063333333333,
+      inGroup: 12
+    }
+  },
+  {
+    _id: 'BGN',
+    value: {
+      balanceSUM: 49264.939999999995,
+      balanceAVG: 4926.494,
+      inGroup: 10
+    }
+  },
+  {
+    _id: 'RSD',
+    value: {
+      balanceSUM: 57801.44000000001,
+      balanceAVG: 4816.786666666668,
+      inGroup: 12
+    }
+  },
+  {
+    _id: 'YER',
+    value: {
+      balanceSUM: 47358.31999999999,
+      balanceAVG: 4735.831999999999,
+      inGroup: 10
+    }
+  },
+  {
+    _id: 'AED',
+    value: { balanceSUM: 12811.14, balanceAVG: 6405.57, inGroup: 2 }
+  },
+  {
+    _id: 'NOK',
+    value: { balanceSUM: 30354.64, balanceAVG: 5059.106666666667, inGroup: 6 }
+  },
+  {
+    _id: 'MYR',
+    value: {
+      balanceSUM: 20216.059999999998,
+      balanceAVG: 5054.014999999999,
+      inGroup: 4
+    }
+  },
+  {
+    _id: 'IDR',
+    value: {
+      balanceSUM: 1180544.9200000002,
+      balanceAVG: 4960.272773109245,
+      inGroup: 238
+    }
+  },
+  {
+    _id: 'CZK',
+    value: {
+      balanceSUM: 199559.45999999996,
+      balanceAVG: 4988.986499999999,
+      inGroup: 40
+    }
+  },
+  {
+    _id: 'AMD',
+    value: { balanceSUM: 78262.28, balanceAVG: 4891.3925, inGroup: 16 }
+  },
+  {
+    _id: 'UAH',
+    value: {
+      balanceSUM: 121183.62000000004,
+      balanceAVG: 5049.317500000002,
+      inGroup: 24
+    }
+  },
+  {
+    _id: 'KZT',
+    value: { balanceSUM: 45941.46, balanceAVG: 4594.146, inGroup: 10 }
+  },
+  {
+    _id: 'MGA',
+    value: { balanceSUM: 87112.2, balanceAVG: 5444.5125, inGroup: 16 }
+  },
+  {
+    _id: 'BRL',
+    value: {
+      balanceSUM: 350037.5800000001,
+      balanceAVG: 4861.633055555557,
+      inGroup: 72
+    }
+  },
+  {
+    _id: 'CLP',
+    value: {
+      balanceSUM: 66862.78,
+      balanceAVG: 5571.8983333333335,
+      inGroup: 12
+    }
+  },
+  {
+    _id: 'SRD',
+    value: { balanceSUM: 10573.36, balanceAVG: 5286.68, inGroup: 2 }
+  },
+  {
+    _id: 'NZD',
+    value: {
+      balanceSUM: 32697.519999999997,
+      balanceAVG: 5449.586666666666,
+      inGroup: 6
+    }
+  },
+  {
+    _id: 'ARS',
+    value: {
+      balanceSUM: 103982.07999999999,
+      balanceAVG: 4726.458181818181,
+      inGroup: 22
+    }
+  },
+  {
+    _id: 'ZMW',
+    value: { balanceSUM: 21601.46, balanceAVG: 5400.365, inGroup: 4 }
+  },
+  {
+    _id: 'SLL',
+    value: { balanceSUM: 20919.54, balanceAVG: 5229.885, inGroup: 4 }
+  },
+  {
+    _id: 'EUR',
+    value: {
+      balanceSUM: 985466.9599999996,
+      balanceAVG: 4927.334799999998,
+      inGroup: 200
+    }
+  },
+  {
+    _id: 'PYG',
+    value: { balanceSUM: 29326.28, balanceAVG: 4887.713333333333, inGroup: 6 }
+  },
+  {
+    _id: 'AFN',
+    value: {
+      balanceSUM: 74218.28000000001,
+      balanceAVG: 5301.305714285715,
+      inGroup: 14
+    }
+  },
+  {
+    _id: 'SZL',
+    value: { balanceSUM: 9618.48, balanceAVG: 4809.24, inGroup: 2 }
+  },
+  {
+    _id: 'EGP',
+    value: { balanceSUM: 34607.36, balanceAVG: 4325.92, inGroup: 8 }
+  },
+  {
+    _id: 'UZS',
+    value: { balanceSUM: 7146.06, balanceAVG: 3573.03, inGroup: 2 }
+  },
+  {
+    _id: 'ZWL',
+    value: { balanceSUM: 11584.34, balanceAVG: 5792.17, inGroup: 2 }
+  },
+  {
+    _id: 'MMK',
+    value: { balanceSUM: 34995.7, balanceAVG: 5832.616666666666, inGroup: 6 }
+  },
+  {
+    _id: 'IQD',
+    value: {
+      balanceSUM: 19919.300000000003,
+      balanceAVG: 4979.825000000001,
+      inGroup: 4
+    }
+  },
+  {
+    _id: 'NAD',
+    value: { balanceSUM: 9617.26, balanceAVG: 4808.63, inGroup: 2 }
+  },
+  {
+    _id: 'USD',
+    value: {
+      balanceSUM: 384121.69999999995,
+      balanceAVG: 4924.637179487179,
+      inGroup: 78
+    }
+  },
+  {
+    _id: 'LYD',
+    value: { balanceSUM: 17529.98, balanceAVG: 4382.495, inGroup: 4 }
+  },
+  {
+    _id: 'VND',
+    value: {
+      balanceSUM: 124767.22000000002,
+      balanceAVG: 4798.739230769232,
+      inGroup: 26
+    }
+  },
+  {
+    _id: 'AUD',
+    value: { balanceSUM: 20429.7, balanceAVG: 5107.425, inGroup: 4 }
+  },
+  {
+    _id: 'COP',
+    value: {
+      balanceSUM: 125569.76000000001,
+      balanceAVG: 5232.073333333334,
+      inGroup: 24
+    }
+  },
+  {
+    _id: 'MDL',
+    value: { balanceSUM: 15117.14, balanceAVG: 3779.285, inGroup: 4 }
+  },
+  {
+    _id: 'NIO',
+    value: { balanceSUM: 19942.56, balanceAVG: 4985.64, inGroup: 4 }
+  },
+  {
+    _id: 'JPY',
+    value: {
+      balanceSUM: 215086.10000000003,
+      balanceAVG: 5121.097619047619,
+      inGroup: 42
+    }
+  },
+  {
+    _id: 'NPR',
+    value: { balanceSUM: 24523.78, balanceAVG: 6130.945, inGroup: 4 }
+  },
+  {
+    _id: 'ISK',
+    value: { balanceSUM: 18519.48, balanceAVG: 4629.87, inGroup: 4 }
+  },
+  {
+    _id: 'GMD',
+    value: { balanceSUM: 10962.34, balanceAVG: 5481.17, inGroup: 2 }
+  },
+  {
+    _id: 'CDF',
+    value: { balanceSUM: 24457.6, balanceAVG: 6114.4, inGroup: 4 }
+  },
+  {
+    _id: 'NGN',
+    value: { balanceSUM: 90144.44, balanceAVG: 4507.222, inGroup: 20 }
+  },
+  {
+    _id: 'HRK',
+    value: {
+      balanceSUM: 58113.899999999994,
+      balanceAVG: 4842.825,
+      inGroup: 12
+    }
+  },
+  {
+    _id: 'ETB',
+    value: {
+      balanceSUM: 30246.379999999997,
+      balanceAVG: 5041.063333333333,
+      inGroup: 6
+    }
+  },
+  {
+    _id: 'BWP',
+    value: { balanceSUM: 8152.58, balanceAVG: 4076.29, inGroup: 2 }
+  },
+  {
+    _id: 'IRR',
+    value: {
+      balanceSUM: 80609.88,
+      balanceAVG: 4478.326666666667,
+      inGroup: 18
+    }
+  },
+  {
+    _id: 'BOB',
+    value: { balanceSUM: 37615.02, balanceAVG: 4701.8775, inGroup: 8 }
+  },
+  {
+    _id: 'PEN',
+    value: {
+      balanceSUM: 151905.04,
+      balanceAVG: 5063.501333333334,
+      inGroup: 30
+    }
+  },
+  {
+    _id: 'THB',
+    value: {
+      balanceSUM: 132919.30000000002,
+      balanceAVG: 4747.117857142858,
+      inGroup: 28
+    }
+  },
+  {
+    _id: 'CNY',
+    value: {
+      balanceSUM: 1811510.2199999993,
+      balanceAVG: 5060.084413407819,
+      inGroup: 358
+    }
+  },
+  {
+    _id: 'MWK',
+    value: { balanceSUM: 7148.84, balanceAVG: 3574.42, inGroup: 2 }
+  },
+  {
+    _id: 'CAD',
+    value: {
+      balanceSUM: 174168.94,
+      balanceAVG: 5122.615882352941,
+      inGroup: 34
+    }
+  },
+  {
+    _id: 'PHP',
+    value: {
+      balanceSUM: 422361.54000000015,
+      balanceAVG: 4911.18069767442,
+      inGroup: 86
+    }
+  },
+  {
+    _id: 'SEK',
+    value: {
+      balanceSUM: 249637.6,
+      balanceAVG: 5200.783333333334,
+      inGroup: 48
+    }
+  },
+  {
+    _id: 'VEF',
+    value: {
+      balanceSUM: 32424.760000000002,
+      balanceAVG: 4053.0950000000003,
+      inGroup: 8
+    }
+  },
+  {
+    _id: 'BYR',
+    value: { balanceSUM: 27918.5, balanceAVG: 4653.083333333333, inGroup: 6 }
+  },
+  {
+    _id: 'LKR',
+    value: { balanceSUM: 20484.74, balanceAVG: 5121.185, inGroup: 4 }
+  },
+  {
+    _id: 'KYD',
+    value: { balanceSUM: 7521.78, balanceAVG: 3760.89, inGroup: 2 }
+  },
+  {
+    _id: 'PKR',
+    value: {
+      balanceSUM: 69685.06,
+      balanceAVG: 4977.504285714285,
+      inGroup: 14
+    }
+  },
+  {
+    _id: 'MNT',
+    value: {
+      balanceSUM: 53776.53999999999,
+      balanceAVG: 5377.6539999999995,
+      inGroup: 10
+    }
+  },
+  {
+    _id: 'RWF',
+    value: { balanceSUM: 20524.58, balanceAVG: 5131.145, inGroup: 4 }
+  },
+  {
+    _id: 'ALL',
+    value: { balanceSUM: 37321.7, balanceAVG: 4665.2125, inGroup: 8 }
+  },
+  {
+    _id: 'XAF',
+    value: {
+      balanceSUM: 48779.700000000004,
+      balanceAVG: 4877.97,
+      inGroup: 10
+    }
+  },
+  {
+    _id: 'GBP',
+    value: { balanceSUM: 12298.38, balanceAVG: 6149.19, inGroup: 2 }
+  },
+  {
+    _id: 'KRW',
+    value: { balanceSUM: 34973.04, balanceAVG: 5828.84, inGroup: 6 }
+  }
+]

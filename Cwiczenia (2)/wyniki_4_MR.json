@@ -1,31 +1,396 @@
-{
-  _id: ObjectId("61682d4fa0912ca2dfd1d58b"),
-  sex: 'Male',
-  first_name: 'Harry',
-  last_name: 'Lawson',
-  job: 'Product Engineer',
-  email: 'hlawson2@flavors.me',
-  location: {
-    city: 'Tutong',
-    address: { streetname: 'Summerview', streetnumber: '93836' }
+DeprecationWarning: Collection.mapReduce() is deprecated. Use an aggregation instead.
+See https://docs.mongodb.com/manual/core/map-reduce for details.
+[
+  {
+    _id: 'Russia',
+    value: { BMIavg: 0.00252715060033529, inGroup: 1214 }
+  }
+]
+[
+  {
+    _id: 'Slovakia',
+    value: { BMIavg: 0.0021338818810983464, inGroup: 2 }
   },
-  description: 'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem',
-  height: '173.4',
-  weight: '75.25',
-  birth_date: '1965-02-18T07:22:24Z',
-  nationality: 'Brunei',
-  credit: [
-    {
-      type: 'mastercard',
-      number: '56022541652043117',
-      currency: 'COP',
-      balance: '3843.63'
-    },
-    {
-      type: 'jcb',
-      number: '5602220902466171',
-      currency: 'SEK',
-      balance: '3870.48'
-    }
-  ]
-}
+  {
+    _id: 'American Samoa',
+    value: { BMIavg: 0.002239833691807659, inGroup: 2 }
+  },
+  {
+    _id: 'Sudan',
+    value: { BMIavg: 0.0024951753358198893, inGroup: 16 }
+  },
+  {
+    _id: 'Guadeloupe',
+    value: { BMIavg: 0.0020619298326605617, inGroup: 4 }
+  },
+  {
+    _id: 'Haiti',
+    value: { BMIavg: 0.002543560330130416, inGroup: 24 }
+  },
+  {
+    _id: 'Kosovo',
+    value: { BMIavg: 0.0024130951832403817, inGroup: 12 }
+  },
+  {
+    _id: 'Martinique',
+    value: { BMIavg: 0.0024025383631333915, inGroup: 2 }
+  },
+  {
+    _id: 'Suriname',
+    value: { BMIavg: 0.003038931494743512, inGroup: 2 }
+  },
+  {
+    _id: 'Equatorial Guinea',
+    value: { BMIavg: 0.0024784158605052225, inGroup: 2 }
+  },
+  {
+    _id: 'El Salvador',
+    value: { BMIavg: 0.00253483610014428, inGroup: 32 }
+  },
+  {
+    _id: 'Ghana',
+    value: { BMIavg: 0.0025211449181938863, inGroup: 20 }
+  },
+  {
+    _id: 'Burundi',
+    value: { BMIavg: 0.002564831294896216, inGroup: 6 }
+  },
+  {
+    _id: 'Palestinian Territory',
+    value: { BMIavg: 0.0025519771078365183, inGroup: 74 }
+  },
+  { _id: 'Oman', value: { BMIavg: 0.002568822113583301, inGroup: 6 } },
+  {
+    _id: 'New Caledonia',
+    value: { BMIavg: 0.0025505881788345543, inGroup: 4 }
+  },
+  {
+    _id: 'Trinidad and Tobago',
+    value: { BMIavg: 0.0027598645704582985, inGroup: 8 }
+  },
+  {
+    _id: 'Nicaragua',
+    value: { BMIavg: 0.002396294219817519, inGroup: 32 }
+  },
+  {
+    _id: 'Uzbekistan',
+    value: { BMIavg: 0.0025895086720586504, inGroup: 48 }
+  },
+  {
+    _id: 'Kuwait',
+    value: { BMIavg: 0.0025231665011916375, inGroup: 14 }
+  },
+  {
+    _id: 'Luxembourg',
+    value: { BMIavg: 0.0026311128380021452, inGroup: 38 }
+  },
+  {
+    _id: 'East Timor',
+    value: { BMIavg: 0.0025827978752662305, inGroup: 8 }
+  },
+  {
+    _id: 'Norway',
+    value: { BMIavg: 0.0027012053304746866, inGroup: 76 }
+  },
+  {
+    _id: 'Jamaica',
+    value: { BMIavg: 0.002493149892025034, inGroup: 20 }
+  },
+  {
+    _id: 'South Sudan',
+    value: { BMIavg: 0.0025958795187276634, inGroup: 2 }
+  },
+  {
+    _id: 'Panama',
+    value: { BMIavg: 0.0024992264629881034, inGroup: 52 }
+  },
+  {
+    _id: 'Pakistan',
+    value: { BMIavg: 0.0025028163496881926, inGroup: 96 }
+  },
+  {
+    _id: 'Malta',
+    value: { BMIavg: 0.002616958044897124, inGroup: 28 }
+  },
+  {
+    _id: 'Libya',
+    value: { BMIavg: 0.002727409420047268, inGroup: 26 }
+  },
+  {
+    _id: 'Malawi',
+    value: { BMIavg: 0.0027299142700133016, inGroup: 10 }
+  },
+  {
+    _id: 'Brunei',
+    value: { BMIavg: 0.002502697259105827, inGroup: 2 }
+  },
+  {
+    _id: 'Sri Lanka',
+    value: { BMIavg: 0.0024576523965721474, inGroup: 18 }
+  },
+  {
+    _id: 'Benin',
+    value: { BMIavg: 0.0025778364569961796, inGroup: 14 }
+  },
+  {
+    _id: 'Poland',
+    value: { BMIavg: 0.0025228362973210316, inGroup: 652 }
+  },
+  {
+    _id: 'Belarus',
+    value: { BMIavg: 0.0025469679075687006, inGroup: 86 }
+  },
+  {
+    _id: 'Greece',
+    value: { BMIavg: 0.0025700782045670507, inGroup: 264 }
+  },
+  {
+    _id: 'Ireland',
+    value: { BMIavg: 0.0025946026932861387, inGroup: 74 }
+  },
+  {
+    _id: 'Iran',
+    value: { BMIavg: 0.0025852744467464773, inGroup: 74 }
+  },
+  {
+    _id: 'Ivory Coast',
+    value: { BMIavg: 0.0026739162218304365, inGroup: 30 }
+  },
+  {
+    _id: 'Turkmenistan',
+    value: { BMIavg: 0.0026074693406233423, inGroup: 20 }
+  },
+  {
+    _id: 'Guyana',
+    value: { BMIavg: 0.002615562997487957, inGroup: 4 }
+  },
+  {
+    _id: 'Japan',
+    value: { BMIavg: 0.002528897911812307, inGroup: 360 }
+  },
+  {
+    _id: 'Vietnam',
+    value: { BMIavg: 0.0024901004479498143, inGroup: 170 }
+  },
+  {
+    _id: 'Laos',
+    value: { BMIavg: 0.0024706560500173144, inGroup: 14 }
+  },
+  {
+    _id: 'Bangladesh',
+    value: { BMIavg: 0.002669345628894041, inGroup: 36 }
+  },
+  {
+    _id: 'Vanuatu',
+    value: { BMIavg: 0.0024697548912916887, inGroup: 6 }
+  },
+  {
+    _id: 'Tajikistan',
+    value: { BMIavg: 0.002496184332022354, inGroup: 22 }
+  },
+  {
+    _id: 'Brazil',
+    value: { BMIavg: 0.0025553839828790525, inGroup: 758 }
+  },
+  {
+    _id: 'Central African Republic',
+    value: { BMIavg: 0.0023916787330266966, inGroup: 12 }
+  },
+  {
+    _id: 'Mongolia',
+    value: { BMIavg: 0.002394448855430015, inGroup: 86 }
+  },
+  {
+    _id: 'Israel',
+    value: { BMIavg: 0.0025063596594229074, inGroup: 46 }
+  },
+  {
+    _id: 'France',
+    value: { BMIavg: 0.002511399479647606, inGroup: 610 }
+  },
+  { _id: 'Guam', value: { BMIavg: 0.002245019365812172, inGroup: 6 } },
+  {
+    _id: 'Reunion',
+    value: { BMIavg: 0.002642177569784529, inGroup: 10 }
+  },
+  {
+    _id: 'Philippines',
+    value: { BMIavg: 0.002512649066270033, inGroup: 1048 }
+  },
+  { _id: 'Fiji', value: { BMIavg: 0.0021202149695398855, inGroup: 2 } },
+  {
+    _id: 'French Guiana',
+    value: { BMIavg: 0.002559150976361709, inGroup: 4 }
+  },
+  {
+    _id: 'Portugal',
+    value: { BMIavg: 0.002527108644410542, inGroup: 638 }
+  },
+  {
+    _id: 'Sweden',
+    value: { BMIavg: 0.0025662875037004997, inGroup: 528 }
+  },
+  {
+    _id: 'Germany',
+    value: { BMIavg: 0.0024173637497584503, inGroup: 64 }
+  },
+  {
+    _id: 'South Africa',
+    value: { BMIavg: 0.0025864994700042746, inGroup: 96 }
+  },
+  {
+    _id: 'Colombia',
+    value: { BMIavg: 0.002568656089567334, inGroup: 304 }
+  },
+  { _id: 'Palau', value: { BMIavg: 0.00296190326938685, inGroup: 4 } },
+  {
+    _id: 'Mauritania',
+    value: { BMIavg: 0.002156355023247727, inGroup: 4 }
+  },
+  {
+    _id: 'Saint Kitts and Nevis',
+    value: { BMIavg: 0.002780112893513996, inGroup: 8 }
+  },
+  {
+    _id: 'Turkey',
+    value: { BMIavg: 0.002299159106196313, inGroup: 6 }
+  },
+  {
+    _id: 'Peru',
+    value: { BMIavg: 0.002522191650738922, inGroup: 292 }
+  },
+  {
+    _id: 'Gambia',
+    value: { BMIavg: 0.002377340522245323, inGroup: 18 }
+  },
+  {
+    _id: 'Malaysia',
+    value: { BMIavg: 0.002561238899059476, inGroup: 82 }
+  },
+  { _id: 'Cuba', value: { BMIavg: 0.002637919135685752, inGroup: 68 } },
+  {
+    _id: 'Namibia',
+    value: { BMIavg: 0.00254913328121885, inGroup: 12 }
+  },
+  {
+    _id: 'Lithuania',
+    value: { BMIavg: 0.002441420834523518, inGroup: 38 }
+  },
+  {
+    _id: 'Venezuela',
+    value: { BMIavg: 0.00247584576990112, inGroup: 78 }
+  },
+  {
+    _id: 'Republic of the Congo',
+    value: { BMIavg: 0.002555986769631976, inGroup: 6 }
+  },
+  {
+    _id: 'Iceland',
+    value: { BMIavg: 0.0025590950932535754, inGroup: 12 }
+  },
+  {
+    _id: 'Sint Maarten',
+    value: { BMIavg: 0.0023160784820344966, inGroup: 4 }
+  },
+  {
+    _id: 'Andorra',
+    value: { BMIavg: 0.0028172283654749504, inGroup: 4 }
+  },
+  {
+    _id: 'Belgium',
+    value: { BMIavg: 0.002614077862601641, inGroup: 10 }
+  },
+  {
+    _id: 'Guinea',
+    value: { BMIavg: 0.0027914221596798197, inGroup: 16 }
+  },
+  {
+    _id: 'Zambia',
+    value: { BMIavg: 0.0025857875377943594, inGroup: 16 }
+  },
+  {
+    _id: 'Cambodia',
+    value: { BMIavg: 0.0025980098697783913, inGroup: 14 }
+  },
+  {
+    _id: 'Eritrea',
+    value: { BMIavg: 0.002618666676758779, inGroup: 6 }
+  },
+  {
+    _id: 'Latvia',
+    value: { BMIavg: 0.0026634771177397017, inGroup: 28 }
+  },
+  {
+    _id: 'Comoros',
+    value: { BMIavg: 0.0025439043034337955, inGroup: 20 }
+  },
+  {
+    _id: 'South Korea',
+    value: { BMIavg: 0.0024516246096774287, inGroup: 84 }
+  },
+  {
+    _id: 'Angola',
+    value: { BMIavg: 0.002417967562103932, inGroup: 16 }
+  },
+  {
+    _id: 'Macedonia',
+    value: { BMIavg: 0.0025169543167338246, inGroup: 60 }
+  },
+  {
+    _id: 'Finland',
+    value: { BMIavg: 0.0025628447139765236, inGroup: 96 }
+  },
+  {
+    _id: 'Uruguay',
+    value: { BMIavg: 0.0025324761962268348, inGroup: 26 }
+  },
+  {
+    _id: 'Saudi Arabia',
+    value: { BMIavg: 0.0025676484975670657, inGroup: 16 }
+  },
+  {
+    _id: 'Ecuador',
+    value: { BMIavg: 0.0025662550287570206, inGroup: 30 }
+  },
+  {
+    _id: 'Bolivia',
+    value: { BMIavg: 0.0025291606754307585, inGroup: 52 }
+  },
+  {
+    _id: 'Western Sahara',
+    value: { BMIavg: 0.0022751092261882586, inGroup: 2 }
+  },
+  {
+    _id: 'United States',
+    value: { BMIavg: 0.002571404395223173, inGroup: 446 }
+  },
+  {
+    _id: 'Madagascar',
+    value: { BMIavg: 0.002478315354739494, inGroup: 60 }
+  },
+  {
+    _id: 'Lebanon',
+    value: { BMIavg: 0.0027509001558004864, inGroup: 12 }
+  },
+  {
+    _id: 'Qatar',
+    value: { BMIavg: 0.0025750482706734888, inGroup: 4 }
+  },
+  {
+    _id: 'Samoa',
+    value: { BMIavg: 0.0020544882004532683, inGroup: 2 }
+  },
+  {
+    _id: 'Yemen',
+    value: { BMIavg: 0.0025520741902141804, inGroup: 66 }
+  },
+  {
+    _id: 'New Zealand',
+    value: { BMIavg: 0.0025359794144919384, inGroup: 32 }
+  },
+  {
+    _id: 'Estonia',
+    value: { BMIavg: 0.002554213616931857, inGroup: 22 }
+  },
+  ... 101 more items
+]
