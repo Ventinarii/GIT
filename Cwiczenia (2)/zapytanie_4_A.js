@@ -25,7 +25,9 @@ db.people.aggregate([
     }},
     {"$group":{
 		_id:"$nationality",
-		BMIavg:{"$avg":"$BMIavg"}
+		BMIavg:{"$avg":"$BMIavg"},
+		BMImin:{"$min":"$BMIavg"},
+		BMImax:{"$max":"$BMIavg"}
 	}}
 ]))
 		
