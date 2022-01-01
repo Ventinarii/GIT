@@ -1,0 +1,24 @@
+"C:\Program Files\Java\jdk-12.0.1\bin\java.exe" -javaagent:C:\Users\Admin\Desktop\Tools\ideaIU-2019.2.win\lib\idea_rt.jar=17891:C:\Users\Admin\Desktop\Tools\ideaIU-2019.2.win\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Admin\Desktop\PJATK\IX_Semestr\NBD\GIT\GIT\IDE64\out\production\IDE64;C:\Users\Admin\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.6.jar;C:\Users\Admin\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.6.jar L5_6.L6
+wrzuci do bazy dokument
+204
+No Content
+pobierze go i wypisze
+200
+OK
+A:puk_puk;B:kto_tam?;A:Drentwy_ￅﾼart
+zmodyfikuje go
+204
+No Content
+wrzuci do bazy dokument
+200
+OK
+Lorem_i_psu_czy_jakoￅﾛ_tak;NiE!_naprawdￄﾙ?
+a na końcu usunie go
+204
+No Content
+i spróbuje pobrać z bazy
+404
+Object Not Found
+java.io.FileNotFoundException: http://localhost:8098/buckets/s17149/keys/A
+
+Process finished with exit code 0

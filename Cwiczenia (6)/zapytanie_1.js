@@ -1,1 +1,0 @@
-printjson(db.people.findOne({"first_name":{$exists:true}}))

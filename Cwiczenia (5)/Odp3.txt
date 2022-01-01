@@ -1,0 +1,32 @@
+
+C:\Users\Admin\Desktop>curl -i -v -XPUT -d '{"name":"A","money":100,"debt":20}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/A
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8098 (#0)
+> PUT /buckets/s17149/keys/A HTTP/1.1
+> Host: localhost:8098
+> User-Agent: curl/7.55.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 28
+>
+* upload completely sent off: 28 out of 28 bytes
+< HTTP/1.1 204 No Content
+HTTP/1.1 204 No Content
+< Vary: Accept-Encoding
+Vary: Accept-Encoding
+< Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+< Date: Fri, 31 Dec 2021 16:27:11 GMT
+Date: Fri, 31 Dec 2021 16:27:11 GMT
+< Content-Type: application/json
+Content-Type: application/json
+< Content-Length: 0
+Content-Length: 0
+
+<
+* Connection #0 to host localhost left intact
+
+C:\Users\Admin\Desktop>curl http://localhost:8098/buckets/s17149/keys/A
+'{name:A,money:100,debt:20}'
+C:\Users\Admin\Desktop>

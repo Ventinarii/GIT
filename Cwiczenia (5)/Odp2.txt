@@ -1,0 +1,4 @@
+
+C:\Users\Admin\Desktop>curl http://localhost:8098/buckets/s17149/keys/A
+'{name:A,money:100}'
+C:\Users\Admin\Desktop>

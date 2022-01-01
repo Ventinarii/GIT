@@ -1,0 +1,31 @@
+1)
+curl -i -v -XPUT -d '{"name":"A","money":100}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/A
+curl -i -v -XPUT -d '{"name":"B","money":110}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/B
+curl -i -v -XPUT -d '{"name":"C","money":120}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/C
+curl -i -v -XPUT -d '{"name":"D","money":130}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/D
+curl -i -v -XPUT -d '{"name":"E","money":140}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/E
+2)
+curl http://localhost:8098/buckets/s17149/keys/A
+3)
+curl -i -v -XPUT -d '{"name":"A","money":100,"debt":20}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/A
+4)
+curl -i -v -XPUT -d '{"name":"A","money":100}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/A
+5)
+curl -i -v -XPUT -d '{"name":"A","money":200}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/A
+6)
+curl -i -XDELETE http://localhost:8098/buckets/s17149/keys/A
+7)
+curl http://localhost:8098/buckets/s17149/keys/A
+8)
+curl -i -v –XPOST -d '{"name":"Ukn","money":1}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/DesohxrPUh2VjquTTl62mEBFJa
+9)
+curl -i http://localhost:8098/buckets/s17149/keys/DesohxrPUh2VjquTTl62mEBFJa
+10)
+curl -i -XDELETE http://localhost:8098/buckets/s17149/keys/DesohxrPUh2VjquTTl62mEBFJa
+
+
+curl -i -v -XPUT -d '{"name":"A","money":100,"debt":20}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/A
+
+curl -i http://localhost:8098/buckets/s17149/keys/A
+
+

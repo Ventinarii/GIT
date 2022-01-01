@@ -1,0 +1,15 @@
+
+C:\Users\Admin\Desktop>curl -i http://localhost:8098/buckets/s17149/keys/DesohxrPUh2VjquTTl62mEBFJa
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvp/73PkzkM2cwZTImMfK8GWN822+LAA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s17149>; rel="up"
+Last-Modified: Fri, 31 Dec 2021 16:33:56 GMT
+ETag: "1LC0nNA3BpkJ898qq0H9nH"
+Date: Fri, 31 Dec 2021 16:34:03 GMT
+Content-Type: application/json
+Content-Length: 20
+
+'{name:Ukn,money:1}'
+C:\Users\Admin\Desktop>

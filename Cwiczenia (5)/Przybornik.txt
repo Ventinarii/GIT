@@ -1,0 +1,42 @@
+echo zadanie 1
+curl -i http://localhost:8098/buckets?buckets=true
+
+curl -v -XPUT -d '{"bar":"baz"}' -H "Content-Type: application/json" http://localhost:8098/buckets/artists/keys/Bruce
+curl –XPUT -H "Content-Type: application/json" -d '{"name": "Bruce Springsteen", "nationality": "USA"}'  http://localhost:8098/buckets/artists/keys/Bruce
+curl http://localhost:8098/buckets/artists/keys/Bruce
+//===============================================================================================================
+
+//===============================================================================================================
+[
+  {
+    _id: ObjectId("61682d4fa0912ca2dfd1d7e2"),
+    sex: 'Male',
+    first_name: 'Benjamin',
+    last_name: 'Romero',
+    job: 'Help Desk Technician',
+    email: 'bromerogq@ameblo.jp',
+    location: {
+      city: 'Mülheim an der Ruhr',
+      address: { streetname: 'Milwaukee', streetnumber: '24607' }
+    },
+    description: 'nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus',
+    height: '170.72',
+    weight: '65.54',
+    birth_date: '2010-10-11T19:45:58Z',
+    nationality: 'Germany',
+    credit: [
+      {
+        type: 'maestro',
+        number: '3530193969356720',
+        currency: 'PYG',
+        balance: '2825.74'
+      },
+      {
+        type: 'solo',
+        number: '3532231866333851',
+        currency: 'XCD',
+        balance: '6465.87'
+      }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+
+C:\Users\Admin\Desktop>curl -i -v -XPOST -d '{"name":"Ukn","money":1}' -H "Content-Type: application/json" http://localhost:8098/buckets/s17149/keys/
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8098 (#0)
+> POST /buckets/s17149/keys/ HTTP/1.1
+> Host: localhost:8098
+> User-Agent: curl/7.55.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 20
+>
+* upload completely sent off: 20 out of 20 bytes
+< HTTP/1.1 201 Created
+HTTP/1.1 201 Created
+< Vary: Accept-Encoding
+Vary: Accept-Encoding
+< Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+< Location: /buckets/s17149/keys/DesohxrPUh2VjquTTl62mEBFJa
+Location: /buckets/s17149/keys/DesohxrPUh2VjquTTl62mEBFJa
+< Date: Fri, 31 Dec 2021 16:31:53 GMT
+Date: Fri, 31 Dec 2021 16:31:53 GMT
+< Content-Type: application/json
+Content-Type: application/json
+< Content-Length: 0
+Content-Length: 0
+
+<
+* Connection #0 to host localhost left intact
+
+C:\Users\Admin\Desktop>
