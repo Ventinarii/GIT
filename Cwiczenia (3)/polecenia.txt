@@ -1,0 +1,79 @@
+1)match(a:Movie)return a
+
+2)match(a:Person)-[b:ACTED_IN]->(c)where a.name="Hugo Weaving" return c
+
+3)match(a:Person)-[b:ACTED_IN]->(c)<-[d:DIRECTED]-(e:Person) 
+where a.name = "Hugo Weaving" return e
+
+4)match(a:Person)-[b:ACTED_IN]->(c)<-[d:ACTED_IN]-(e:Person) 
+where a.name = "Hugo Weaving" return e
+
+5)match(a:Movie)<-[b:ACTED_IN]-(c:Person)-[d:ACTED_IN]->(e:Movie) where a.title="The Matrix" return e
+
+6)match(a:Person)-[b:ACTED_IN]->(c:Movie) with a, count(b) as sum return a,sum
+
+7)match(a:Person)-[b:WROTE]->(c:Movie)<-[d:DIRECTED]-(a)return a,c
+
+8)match(a:Person)-[b:ACTED_IN]->(c:Movie)<-[d:ACTED_IN]-(e:Person)
+where  a.name = "Hugo Weaving" and e.name = "Keanu Reeves" return c
+
+9)
+create (a:Person { name: 'Joe Johnston', born: '1950' })
+
+create (a:Person { name: 'Christopher Markus', born: '1970' })
+create (a:Person { name: 'Stephen McFeely', born: '1970' })
+create (a:Person { name: 'Joe Simon', born: '1913' })
+
+create (a:Person { name: 'Chris Evans', born: '1981' })
+//create (a:Person { name: 'Hugo Weaving', born: '1960' })<==on już istnieje - pominąć.
+create (a:Person { name: 'Samuel L. Jackson', born: '1948' })
+
+create (a:Movie { tagline: 'American frosting', title: 'Captain America: The First Avenger', released: '2011' })
+
+match (a:Person),(b:Movie)
+where a.name = 'Joe Johnston' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: DIRECTED]->(b)
+return type(c)
+
+match (a:Person),(b:Movie)
+where a.name = 'Joe Johnston' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: DIRECTED]->(b)
+return type(c)
+
+match (a:Person),(b:Movie)
+where a.name = 'Christopher Markus' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: WROTE]->(b)
+return type(c)
+match (a:Person),(b:Movie)
+where a.name = 'Stephen McFeely' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: WROTE]->(b)
+return type(c)
+match (a:Person),(b:Movie)
+where a.name = 'Joe Simon' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: WROTE]->(b)
+return type(c)
+
+match (a:Person),(b:Movie)
+where a.name = 'hris Evans' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: ACTED_IN]->(b)
+return type(c)
+match (a:Person),(b:Movie)
+where a.name = 'Hugo Weaving' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: ACTED_IN]->(b)
+return type(c)
+match (a:Person),(b:Movie)
+where a.name = 'Samuel L. Jackson' and b.title = 'Captain America: The First Avenger'
+create (a)-[c: ACTED_IN]->(b)
+return type(c)
+
+match (a:Person)-[b:ACTED_IN]->(c:Movie)
+where c.title = "Captain America: The First Avenger"
+return a,b,c
+union
+match (a:Person)-[b:DIRECTED]->(c:Movie)
+where c.title = "Captain America: The First Avenger"
+return a,b,c
+union
+match (a:Person)-[b:WROTE]->(c:Movie)
+where c.title = "Captain America: The First Avenger"
+return a,b,c

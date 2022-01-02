@@ -1,0 +1,194 @@
+﻿[
+  {
+    "a": {
+"identity": 177,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Samuel L. Jackson",
+"born": "1948"
+      }
+    },
+    "b": {
+"identity": 259,
+"start": 177,
+"end": 178,
+"type": "ACTED_IN",
+"properties": {
+
+      }
+    },
+    "c": {
+"identity": 178,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"tagline": "American frosting",
+"title": "Captain America: The First Avenger",
+"released": "2011"
+      }
+    }
+  },
+  {
+    "a": {
+"identity": 4,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Hugo Weaving",
+"born": 1960
+      }
+    },
+    "b": {
+"identity": 258,
+"start": 4,
+"end": 178,
+"type": "ACTED_IN",
+"properties": {
+
+      }
+    },
+    "c": {
+"identity": 178,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"tagline": "American frosting",
+"title": "Captain America: The First Avenger",
+"released": "2011"
+      }
+    }
+  },
+  {
+    "a": {
+"identity": 171,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Joe Johnston",
+"born": "1950"
+      }
+    },
+    "b": {
+"identity": 253,
+"start": 171,
+"end": 178,
+"type": "DIRECTED",
+"properties": {
+
+      }
+    },
+    "c": {
+"identity": 178,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"tagline": "American frosting",
+"title": "Captain America: The First Avenger",
+"released": "2011"
+      }
+    }
+  },
+  {
+    "a": {
+"identity": 174,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Joe Simon",
+"born": "1913"
+      }
+    },
+    "b": {
+"identity": 257,
+"start": 174,
+"end": 178,
+"type": "WROTE",
+"properties": {
+
+      }
+    },
+    "c": {
+"identity": 178,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"tagline": "American frosting",
+"title": "Captain America: The First Avenger",
+"released": "2011"
+      }
+    }
+  },
+  {
+    "a": {
+"identity": 173,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Stephen McFeely",
+"born": "1970"
+      }
+    },
+    "b": {
+"identity": 256,
+"start": 173,
+"end": 178,
+"type": "WROTE",
+"properties": {
+
+      }
+    },
+    "c": {
+"identity": 178,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"tagline": "American frosting",
+"title": "Captain America: The First Avenger",
+"released": "2011"
+      }
+    }
+  },
+  {
+    "a": {
+"identity": 172,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Christopher Markus",
+"born": "1970"
+      }
+    },
+    "b": {
+"identity": 255,
+"start": 172,
+"end": 178,
+"type": "WROTE",
+"properties": {
+
+      }
+    },
+    "c": {
+"identity": 178,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"tagline": "American frosting",
+"title": "Captain America: The First Avenger",
+"released": "2011"
+      }
+    }
+  }
+]
