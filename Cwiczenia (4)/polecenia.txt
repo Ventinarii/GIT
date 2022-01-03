@@ -1,79 +1,89 @@
-1)match(a:Movie)return a
+1)match (a{name: "Darjeeling"}),(b {name: "Sandakphu"}),path = allShortestPaths((a)-[*]->(b))return path
 
-2)match(a:Person)-[b:ACTED_IN]->(c)where a.name="Hugo Weaving" return c
+2)match (a{name: "Darjeeling"}),(b {name: "Sandakphu"}),path = allShortestPaths((a)-[*]->(b))
+where all (c in relationships(path) where c.winter = "true")return path
 
-3)match(a:Person)-[b:ACTED_IN]->(c)<-[d:DIRECTED]-(e:Person) 
-where a.name = "Hugo Weaving" return e
+3)
+  a)match path = ((a {name: "Darjeeling"})-[b*]->(c {name: "Sandakphu"}))
+	unwind b as d with path, reduce(x=0, addSum in collect(d.distance) | x + addSum) as  distance
+	order by distance desc return distinct path,distance
+  b)match (a {name: "Darjeeling"}), (b {name: "Sandakphu"}), path = allShortestPaths((a)-[:twowheeler*]->(b))
+	where all (c in relationships(path) where c.summer = "true")return path
 
-4)match(a:Person)-[b:ACTED_IN]->(c)<-[d:ACTED_IN]-(e:Person) 
-where a.name = "Hugo Weaving" return e
+4)match(a:Flight)-[:ORIGIN]->(b:Airport)with count(a) as c, b
+order by count(a) desc return b, c
 
-5)match(a:Movie)<-[b:ACTED_IN]-(c:Person)-[d:ACTED_IN]->(e:Movie) where a.title="The Matrix" return e
+5)nie wiem. coś z zapytania rekurencyjnego, z unwind? coś z APOC? brutalna siła i union? (było by ich z 6)
+//==============================================================głupie rozwiązanie
+match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
+(stage1)
+,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
+where all ( a in ticket1.price WHERE a < 3000)
+return stage1 as target, 1 as h
+union
+match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
+(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
+(stage2)
+,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
+,(fly2)<-[:ASSIGN]-(ticket2:Ticket)
+where all ( a in ticket1.price+ticket2.price WHERE a < 3000)
+return stage2 as target, 2 as h
+union
+match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
+(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
+(stage2)<-[o3:ORIGIN*..25]-(fly3:Flight)-[d3:DESTINATION*..25]->
+(stage3)
+,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
+,(fly2)<-[:ASSIGN]-(ticket2:Ticket)
+,(fly3)<-[:ASSIGN]-(ticket3:Ticket)
+where all ( a in ticket1.price+ticket2.price WHERE a < 3000)
+return stage3 as target, 3 as h
+union
+match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
+(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
+(stage2)<-[o3:ORIGIN*..25]-(fly3:Flight)-[d3:DESTINATION*..25]->
+(stage3)<-[o4:ORIGIN*..25]-(fly4:Flight)-[d4:DESTINATION*..25]->
+(stage4)
+,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
+,(fly2)<-[:ASSIGN]-(ticket2:Ticket)
+,(fly3)<-[:ASSIGN]-(ticket3:Ticket)
+,(fly4)<-[:ASSIGN]-(ticket4:Ticket)
+where all ( a in ticket1.price+ticket2.price WHERE a < 3000)
+return stage4 as target, 4 as h
 
-6)match(a:Person)-[b:ACTED_IN]->(c:Movie) with a, count(b) as sum return a,sum
+... i tak do stage20 i fly20. przy koszcie minimalnym 200$ 15 skoków powinno wykluczyć potęcjalne braki. 20 to gwarancja.
+//==============================================================targeet
+match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
+(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
+(stage2)<-[o3:ORIGIN*..25]-(fly2:Flight)-[d3:DESTINATION*..25]->
+(stage3)<-[o4:ORIGIN*..25]-(fly2:Flight)-[d4:DESTINATION*..25]->
+(stage4)<-[o5:ORIGIN*..25]-(fly2:Flight)-[d5:DESTINATION*..25]->
+(stage5)<-[o6:ORIGIN*..25]-(fly2:Flight)-[d6:DESTINATION*..25]->
+(stage6)<-[o7:ORIGIN*..25]-(fly2:Flight)-[d7:DESTINATION*..25]->
+(stage7)<-[o8:ORIGIN*..25]-(fly2:Flight)-[d8:DESTINATION*..25]->
+(stage8)<-[o9:ORIGIN*..25]-(fly2:Flight)-[d9:DESTINATION*..25]->
+(stage9)<-[o10:ORIGIN*..25]-(fly2:Flight)-[d10:DESTINATION*..25]->
+(stage10)
+,(fly1)<-[:ASSIGN]-(ticket:Ticket)
+,(fly2)<-[:ASSIGN]-(ticket:Ticket)
+,(fly3)<-[:ASSIGN]-(ticket:Ticket)
+,(fly4)<-[:ASSIGN]-(ticket:Ticket)
+,(fly5)<-[:ASSIGN]-(ticket:Ticket)
+,(fly6)<-[:ASSIGN]-(ticket:Ticket)
+,(fly7)<-[:ASSIGN]-(ticket:Ticket)
+,(fly8)<-[:ASSIGN]-(ticket:Ticket)
+,(fly9)<-[:ASSIGN]-(ticket:Ticket)
+,(fly10)<-[:ASSIGN]-(ticket:Ticket)
+where all ( a in ticket.price WHERE a < 3000)
+return source,o1,fly1,d1
+//==============================================================
+6)match (a{name: "LAX"}),(b {name: "DAY"}), path = allShortestPaths((a)-[*]-(b)) return path
 
-7)match(a:Person)-[b:WROTE]->(c:Movie)<-[d:DIRECTED]-(a)return a,c
+7)
 
-8)match(a:Person)-[b:ACTED_IN]->(c:Movie)<-[d:ACTED_IN]-(e:Person)
-where  a.name = "Hugo Weaving" and e.name = "Keanu Reeves" return c
+8)
 
 9)
-create (a:Person { name: 'Joe Johnston', born: '1950' })
 
-create (a:Person { name: 'Christopher Markus', born: '1970' })
-create (a:Person { name: 'Stephen McFeely', born: '1970' })
-create (a:Person { name: 'Joe Simon', born: '1913' })
+10)
 
-create (a:Person { name: 'Chris Evans', born: '1981' })
-//create (a:Person { name: 'Hugo Weaving', born: '1960' })<==on już istnieje - pominąć.
-create (a:Person { name: 'Samuel L. Jackson', born: '1948' })
-
-create (a:Movie { tagline: 'American frosting', title: 'Captain America: The First Avenger', released: '2011' })
-
-match (a:Person),(b:Movie)
-where a.name = 'Joe Johnston' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: DIRECTED]->(b)
-return type(c)
-
-match (a:Person),(b:Movie)
-where a.name = 'Joe Johnston' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: DIRECTED]->(b)
-return type(c)
-
-match (a:Person),(b:Movie)
-where a.name = 'Christopher Markus' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: WROTE]->(b)
-return type(c)
-match (a:Person),(b:Movie)
-where a.name = 'Stephen McFeely' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: WROTE]->(b)
-return type(c)
-match (a:Person),(b:Movie)
-where a.name = 'Joe Simon' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: WROTE]->(b)
-return type(c)
-
-match (a:Person),(b:Movie)
-where a.name = 'hris Evans' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: ACTED_IN]->(b)
-return type(c)
-match (a:Person),(b:Movie)
-where a.name = 'Hugo Weaving' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: ACTED_IN]->(b)
-return type(c)
-match (a:Person),(b:Movie)
-where a.name = 'Samuel L. Jackson' and b.title = 'Captain America: The First Avenger'
-create (a)-[c: ACTED_IN]->(b)
-return type(c)
-
-match (a:Person)-[b:ACTED_IN]->(c:Movie)
-where c.title = "Captain America: The First Avenger"
-return a,b,c
-union
-match (a:Person)-[b:DIRECTED]->(c:Movie)
-where c.title = "Captain America: The First Avenger"
-return a,b,c
-union
-match (a:Person)-[b:WROTE]->(c:Movie)
-where c.title = "Captain America: The First Avenger"
-return a,b,c
