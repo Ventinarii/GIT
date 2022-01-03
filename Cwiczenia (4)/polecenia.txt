@@ -13,77 +13,61 @@ where all (c in relationships(path) where c.winter = "true")return path
 4)match(a:Flight)-[:ORIGIN]->(b:Airport)with count(a) as c, b
 order by count(a) desc return b, c
 
-5)nie wiem. coś z zapytania rekurencyjnego, z unwind? coś z APOC? brutalna siła i union? (było by ich z 6)
-//==============================================================głupie rozwiązanie
-match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
-(stage1)
-,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
-where all ( a in ticket1.price WHERE a < 3000)
-return stage1 as target, 1 as h
-union
-match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
-(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
-(stage2)
-,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
-,(fly2)<-[:ASSIGN]-(ticket2:Ticket)
-where all ( a in ticket1.price+ticket2.price WHERE a < 3000)
-return stage2 as target, 2 as h
-union
-match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
-(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
-(stage2)<-[o3:ORIGIN*..25]-(fly3:Flight)-[d3:DESTINATION*..25]->
-(stage3)
-,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
-,(fly2)<-[:ASSIGN]-(ticket2:Ticket)
-,(fly3)<-[:ASSIGN]-(ticket3:Ticket)
-where all ( a in ticket1.price+ticket2.price WHERE a < 3000)
-return stage3 as target, 3 as h
-union
-match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
-(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
-(stage2)<-[o3:ORIGIN*..25]-(fly3:Flight)-[d3:DESTINATION*..25]->
-(stage3)<-[o4:ORIGIN*..25]-(fly4:Flight)-[d4:DESTINATION*..25]->
-(stage4)
-,(fly1)<-[:ASSIGN]-(ticket1:Ticket)
-,(fly2)<-[:ASSIGN]-(ticket2:Ticket)
-,(fly3)<-[:ASSIGN]-(ticket3:Ticket)
-,(fly4)<-[:ASSIGN]-(ticket4:Ticket)
-where all ( a in ticket1.price+ticket2.price WHERE a < 3000)
-return stage4 as target, 4 as h
 
-... i tak do stage20 i fly20. przy koszcie minimalnym 200$ 15 skoków powinno wykluczyć potęcjalne braki. 20 to gwarancja.
-//==============================================================targeet
-match (source {name: "LAX"})<-[o1:ORIGIN]-(fly1:Flight)-[d1:DESTINATION*..25]->
-(stage1)<-[o2:ORIGIN*..25]-(fly2:Flight)-[d2:DESTINATION*..25]->
-(stage2)<-[o3:ORIGIN*..25]-(fly2:Flight)-[d3:DESTINATION*..25]->
-(stage3)<-[o4:ORIGIN*..25]-(fly2:Flight)-[d4:DESTINATION*..25]->
-(stage4)<-[o5:ORIGIN*..25]-(fly2:Flight)-[d5:DESTINATION*..25]->
-(stage5)<-[o6:ORIGIN*..25]-(fly2:Flight)-[d6:DESTINATION*..25]->
-(stage6)<-[o7:ORIGIN*..25]-(fly2:Flight)-[d7:DESTINATION*..25]->
-(stage7)<-[o8:ORIGIN*..25]-(fly2:Flight)-[d8:DESTINATION*..25]->
-(stage8)<-[o9:ORIGIN*..25]-(fly2:Flight)-[d9:DESTINATION*..25]->
-(stage9)<-[o10:ORIGIN*..25]-(fly2:Flight)-[d10:DESTINATION*..25]->
-(stage10)
-,(fly1)<-[:ASSIGN]-(ticket:Ticket)
-,(fly2)<-[:ASSIGN]-(ticket:Ticket)
-,(fly3)<-[:ASSIGN]-(ticket:Ticket)
-,(fly4)<-[:ASSIGN]-(ticket:Ticket)
-,(fly5)<-[:ASSIGN]-(ticket:Ticket)
-,(fly6)<-[:ASSIGN]-(ticket:Ticket)
-,(fly7)<-[:ASSIGN]-(ticket:Ticket)
-,(fly8)<-[:ASSIGN]-(ticket:Ticket)
-,(fly9)<-[:ASSIGN]-(ticket:Ticket)
-,(fly10)<-[:ASSIGN]-(ticket:Ticket)
-where all ( a in ticket.price WHERE a < 3000)
-return source,o1,fly1,d1
-//==============================================================
-6)match (a{name: "LAX"}),(b {name: "DAY"}), path = allShortestPaths((a)-[*]-(b)) return path
 
-7)
 
-8)
 
-9)
+//============================================================================================================================
+poniższe zapytania nie mają plików graficznych i JSON ponieważ baza danych zwróciła timeout. teoretycznie mogą być poprawne.
+//============================================================================================================================
+5)??? =-nie wiem. coś z zapytania rekurencyjnego, z unwind? coś z APOC? brutalna siła i union? (było by ich z 6)
+//MODYFIKACJA BAZY DANYCH=====================================================================================================
+match (a)<-[b:ORIGIN]-(c)-[d:DESTINATION]->(e),(c)<-[f]-(g)
+return a,b,c,d,e,min(g.price)as price order by price desc
 
-10)
+match (a)<-[b:ORIGIN]-(c)-[d:DESTINATION]->(e),(c)<-[f]-(g)
+with *,min(g.price)as price
+return a,b,c,d,e,price order by price
+
+match (a)<-[b:ORIGIN]-(c)-[d:DESTINATION]->(e),(c)<-[f]-(g)
+with *,min(g.price)as price
+return a,b,c,d,e,price order by price
+create (a)-[X:FLY{cost:price}]->(e)
+return type(X), X.cost
+//============================================================================================================================
+6)match path = ((a {name: "LAX"})-[b:FLY*]->(c {name: "DAY"}))
+unwind b as d with path, reduce(x=0, addSum in collect(d.cost) | x + addSum) as  totalCost
+return distinct path,totalCost order by totalCost desc
+
+7)match path = ((a {name: "LAX"})-[b:FLY*]->(c {name: "DAY"}))
+unwind b as d with path, reduce(x=0, addSum in collect(d.cost) | x + addSum) as  totalCost
+return distinct path,totalCost order by totalCost desc limit 1
+//MODYFIKACJA BAZY DANYCH=====================================================================================================
+MATCH()-[r:FLY]->()
+DELETE r
+
+match (a)<-[b:ORIGIN]-(c)-[d:DESTINATION]->(e),(c)<-[f]-(g{class:"business"})
+with *,min(g.price)as price
+return a,b,c,d,e,price order by price
+
+match (a)<-[b:ORIGIN]-(c)-[d:DESTINATION]->(e),(c)<-[f]-(g{class:"business"})
+with *,min(g.price)as price
+create (a)-[X:FLY{cost:price}]->(e)
+return type(X), X.cost
+//============================================================================================================================
+8)match path = ((a {name: "LAX"})-[b:FLY*]->(c {name: "DAY"}))
+unwind b as d with path, reduce(x=0, addSum in collect(d.cost) | x + addSum) as  totalCost
+return distinct path,totalCost order by totalCost desc limit 1
+//MODYFIKACJA BAZY DANYCH=====================================================================================================
+MATCH()-[r:FLY]->()
+DELETE r
+//============================================================================================================================
+9)=-group by i unwind?
+
+10)match path = ((a1)<-[:ORIGIN]-(flight:Flight)-[:DESTINATION]->(a2)<-[:ORIGIN]-(flight2:Flight)-[:DESTINATION]->(a3)) where a1<>a3
+with path, reduce(sum = 0, part IN [x IN NODES(path) where "Flight" IN LABELS(x)] |
+sum + [(part)<-[:ASSIGN]-(ticket {class: "economy"}) | ticket.price][0]) as totalCost 
+return path,totalCost order by totalCost asc limit 1
+
+//note: match (a{name: "LAX"}),(b {name: "DAY"}), path = allShortestPaths((a)-[fly:FLY*]->(b)) return path
 
